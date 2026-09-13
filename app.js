@@ -127,8 +127,8 @@ if (downloadExcelBtn) {
 
             XLSX.writeFile(
                 workbook,
-                "Employee-ID-Card-Format.xlsx"
-            );
+                "Workforce IdCard Format.xlsx"
+            );  
 
         }
     );
@@ -370,11 +370,11 @@ function formatDate(value) {
                 String(date.d)
                     .padStart(2, "0")
                 +
-                "/" +
+                "-" +
                 String(date.m)
                     .padStart(2, "0")
                 +
-                "/" +
+                "-" +
                 date.y
             );
 
