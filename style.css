@@ -526,7 +526,7 @@ small {
 
 .company-logo {
 
-    width: 85%;
+    width: 95%;
 
     height: 95%;
 
@@ -549,7 +549,7 @@ small {
 
     justify-content: center;
 
-    texg t-align: center;
+    text-align: center;
 
     padding: 
        1mm 2mm;
@@ -558,6 +558,7 @@ small {
 
 
 .company-name {
+
 
     font-size: 3.2mm;
 
@@ -569,10 +570,9 @@ small {
 
 }
 
+/*.company-address {
 
-.company-address {
-
-    font-size: 2.15mm;
+    font-size: 2.2mm;
 
     font-weight: 700;
 
@@ -581,6 +581,42 @@ small {
     color: #000;
 
     margin-top: 1mm;
+
+}*/
+
+.address1{
+
+    font-size: 2.8mm;
+
+    font-weight: 700;
+
+    line-height: 1.12;
+
+    color: #000;
+
+}
+
+.address2{
+
+    font-size: 2.8mm;
+
+    font-weight: 700;
+
+    line-height: 1.12;
+
+    color: #000;
+
+}
+
+.address3{
+
+    font-size: 2.8mm;
+
+    font-weight: 700;
+
+    line-height: 1.12;
+
+    color: #000;
 
 }
 
