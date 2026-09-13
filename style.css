@@ -1,0 +1,927 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+
+body {
+
+    background: #f1f3f5;
+
+    color: #18212b;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+header {
+
+    height: 80px;
+
+    background: #18212b;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: white;
+
+}
+
+
+header h1 {
+
+    margin: 0;
+
+    font-size: 25px;
+
+}
+
+
+/* =========================================
+   INPUT PAGE
+========================================= */
+
+.page-layout {
+
+    display: block;
+
+    margin-top: 60px;
+
+}
+
+
+.layout {
+
+    max-width: 1500px;
+
+    margin: auto;
+
+    padding: 20px;
+
+}
+
+
+/* =========================================
+   INPUT BAR
+========================================= */
+
+.input-bar {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 20px;
+
+}
+
+
+/* =========================================
+   PANEL
+========================================= */
+
+.panel {
+
+    background: black;
+
+    padding: 15px;
+
+    min-height: 300px;
+
+    width: 350px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 2px 10px
+        rgba(0, 0, 0, 0.15);
+
+}
+
+
+.panel h2 {
+
+    color: white;
+
+    font-size: 15px;
+
+    margin:
+        0 0 12px;
+
+}
+
+
+/* =========================================
+   UPLOAD
+========================================= */
+
+.upload {
+
+    display: block;
+
+    border:
+        2px solid white;
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    background: #f0ec06;
+
+    margin-bottom: 8px;
+
+    cursor: pointer;
+
+}
+
+
+.upload input {
+
+    display: block;
+
+    width: 100%;
+
+    margin-top: 8px;
+
+}
+
+/* =========================================
+   DOWNLOAD EXCEL FORMAT
+========================================= */
+
+.download-excel-btn {
+
+    width: 100%;
+
+    margin-top: 12px;
+
+    padding: 12px;
+
+    border: 2px solid white;
+
+    border-radius: 8px;
+
+    background: #158c4c;
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+.download-excel-btn:hover {
+
+    background: #116f3b;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =========================================
+   INPUT
+========================================= */
+
+.panel label:not(.upload) {
+
+    display: block;
+
+    font-size: 12px;
+
+    color: white;
+
+    font-weight: bold;
+
+    margin: 10px 0;
+
+}
+
+
+.panel label:not(.upload) input {
+
+    width: 100%;
+
+    padding: 8px;
+
+    border:
+        1px solid #cbd3da;
+
+    border-radius: 6px;
+
+    margin-top: 5px;
+
+}
+
+
+/* =========================================
+   COLORS
+========================================= */
+
+.colors {
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+
+}
+
+
+.colors input {
+
+    width: 100%;
+
+    height: 40px;
+
+    margin-top: 4px;
+
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.status {
+
+    font-size: 11px;
+
+    color: #ffffff;
+
+    margin-top: 10px;
+
+}
+
+
+small {
+
+    font-size: 11px;
+
+    color: #c5c5c5;
+
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.btn-container {
+
+    margin-top: 30px;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+
+    padding: 20px;
+
+}
+
+
+.btn-container button {
+
+    width: 220px;
+
+    height: 50px;
+
+    border-radius: 12px;
+
+    outline: none;
+
+    border: 1.5px solid #111;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+
+}
+
+
+.btn-container button:hover {
+
+    transform: translateY(-2px);
+
+    opacity: 0.9;
+
+}
+
+
+.generate-btn {
+
+    background: #1162a4;
+
+    color: white;
+
+}
+
+
+.pdf-btn {
+
+    background: #158c4c;
+
+    color: white;
+
+}
+
+
+.print-btn {
+
+    background: #090909;
+
+    color: white;
+
+}
+
+
+.clear-btn {
+
+    background: #c62828;
+
+    color: white;
+
+}
+
+
+/* =========================================
+   CARDS CONTAINER
+========================================= */
+
+.cards-container {
+
+    display: none;
+
+    width: 100%;
+
+    margin: 30px auto;
+
+}
+
+
+.cards-container.active {
+
+    display: block;
+
+}
+
+
+/* =========================================
+   A4 PAGE
+========================================= */
+
+.a4-page {
+
+    width: 210mm;
+
+    height: 297mm;
+
+    margin: 20px auto;
+
+    padding: 12.875mm 13.5mm;
+
+    background: white;
+
+    display: grid;
+
+    grid-template-columns: 90mm 90mm;
+
+    grid-template-rows:
+       repeat(4, 56.25mm);
+
+    column-gap: 10mm;
+
+    row-gap: 12mm;
+
+    align-content: start;
+
+    justify-content: center;
+
+    box-shadow:
+        0 3px 15px
+        rgba(0, 0, 0, 0.20);
+
+}
+
+
+/* =========================================
+   ID CARD
+========================================= */
+
+.id-card {
+
+    width: 90mm;
+
+    height: 56.25mm;
+
+    border:
+        0.5mm solid black;
+
+    position: relative;
+
+    overflow: hidden;
+
+    font-family:
+        Calibri,
+        Arial,
+        sans-serif;
+
+    background: white;
+
+}
+
+
+.card-template {
+
+    display: none !important;
+
+}
+
+
+/* =========================================
+   CARD HEADER
+========================================= */
+
+.card-header {
+
+    height: 35%;
+
+    display: grid;
+
+    grid-template-columns:
+        31% 69%;
+
+    border-bottom:
+        0.4mm solid #111;
+
+    background: #f3f33d;
+
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo-area {
+
+    background: white;
+
+    border-right:
+        0.4mm solid #111;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 1mm;
+
+    overflow: hidden;
+
+}
+
+
+.company-logo {
+
+    width: 85%;
+
+    height: 95%;
+
+    object-fit: contain;
+
+}
+
+
+/* =========================================
+   COMPANY
+========================================= */
+
+.company-area {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    texg t-align: center;
+
+    padding: 
+       1mm 2mm;
+
+}
+
+
+.company-name {
+
+    font-size: 3.2mm;
+
+    font-weight: 700;
+
+    line-height: 1.12;
+
+    color: #000;
+
+}
+
+
+.company-address {
+
+    font-size: 2.15mm;
+
+    font-weight: 700;
+
+    line-height: 1.25;
+
+    color: #000;
+
+    margin-top: 1mm;
+
+}
+
+
+/* =========================================
+   CARD BODY
+========================================= */
+
+.card-body {
+
+    height: 65%;
+
+    position: relative;
+
+}
+
+
+/* =========================================
+   PHOTO
+========================================= */
+
+.photo-box {
+
+    position: absolute;
+
+    left: 2.2mm;
+
+    top: 2.8mm;
+
+    width: 25mm;
+
+    height: 27mm;
+
+    background: white;
+
+    border:
+        0.4mm solid black;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+}
+
+
+.employee-photo {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: none;
+
+}
+
+
+.employee-photo.loaded {
+
+    display: block;
+
+}
+
+
+.photo-placeholder {
+
+    font-size: 2.5mm;
+
+    color: black;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================================
+   DETAILS
+========================================= */
+
+.details {
+
+    position: absolute;
+
+    left: 30mm;
+
+    top: 2.5mm;
+
+    right: 2mm;
+
+    color: #174a82;
+
+    font-size: 2.75mm;
+
+    font-weight: 900;
+
+    font-family:
+        Calibri,
+        Arial,
+        sans-serif;
+
+}
+
+
+.detail {
+
+    display: grid;
+
+    grid-template-columns:
+        20mm 3mm 1fr;
+
+    line-height: 1.55;
+
+    white-space: nowrap;
+
+}
+
+
+.detail strong {
+
+    color: #111;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+}
+
+
+.detail b {
+
+    color: #174a82;
+
+}
+
+
+/* =========================================
+   SIGNATURE
+========================================= */
+
+.signature-area {
+
+    position: absolute;
+
+    right: 1.5mm;
+
+    bottom: 1mm;
+
+    text-align: center;
+
+    min-width: 25mm;
+
+}
+
+
+.signature {
+
+    display: block;
+
+    max-width: 22mm;
+
+    max-height: 10mm;
+
+    object-fit: contain;
+
+    margin:
+        0 auto -2mm;
+
+}
+
+
+.authority {
+
+    font-size: 2.3mm;
+
+    font-weight: 800;
+
+    color: #111;
+
+    white-space: nowrap;
+
+}
+
+
+/* =========================================
+   GENERATED CARD
+========================================= */
+
+.generated-card {
+
+    display: block;
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .a4-page {
+
+        transform-origin: top center;
+
+        transform: scale(0.8);
+
+        margin-bottom: -55px;
+
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .a4-page {
+
+        transform: scale(0.55);
+
+        margin-bottom: -130px;
+
+    }
+
+
+    .btn-container {
+
+        gap: 10px;
+
+    }
+
+
+    .btn-container button {
+
+        width: 180px;
+
+    }
+
+}
+
+
+/* =========================================
+   PRINT
+========================================= */
+
+@page {
+
+    size: A4 portrait;
+
+    margin: 0;
+
+}
+
+
+@media print {
+
+    html,
+    body {
+
+        margin: 0;
+
+        padding: 0;
+
+        background: white;
+
+    }
+
+
+    header,
+    .page-layout,
+    footer {
+
+        display: none !important;
+
+    }
+
+
+    .cards-container {
+
+        display: block !important;
+
+        margin: 0;
+
+        padding: 0;
+
+    }
+
+
+    .a4-page {
+
+        width: 210mm;
+
+        height: 297mm;
+
+        margin: 0;
+
+        padding:
+            3.875mm 13.5mm;
+
+        box-shadow: none;
+
+        display: grid;
+
+        grid-template-columns:
+            90mm 90mm;
+
+        grid-template-rows:
+            repeat(4, 56.25mm);
+
+        column-gap: 3mm;
+
+        row-gap: 3mm;
+
+        page-break-after: always;
+
+        break-after: page;
+
+    }
+
+
+    .a4-page:last-child {
+
+        page-break-after: auto;
+
+        break-after: auto;
+
+    }
+
+
+    .id-card {
+
+        width: 90mm;
+
+        height: 56.25mm;
+
+        box-shadow: none;
+
+    }
+
+}

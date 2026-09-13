@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Employee ID Card Generator</title>
+
+    <link rel="stylesheet" href="style.css">
+
+
+    <!-- Excel -->
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+
+    <!-- HTML to Canvas -->
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+    <!-- PDF -->
+    <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+
+</head>
+
+
+<body>
+
+
+    <header>
+
+        <h1>
+            Employee ID Card
+        </h1>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- =========================================
+         INPUT PAGE
+    ========================================== -->
+
+        <div class="page-layout">
+
+
+            <div class="layout">
+
+
+                <div class="input-bar">
+
+
+                    <!-- Excel -->
+
+                    <section class="panel">
+
+                        <h2>
+                            1. Excel Data
+                        </h2>
+
+
+                        <label class="upload">
+
+                            <b>
+                                📊 Upload Excel / CSV
+                            </b>
+
+
+                            <input id="excelFile" type="file" accept=".xlsx,.xls,.csv">
+
+                        </label>
+
+
+                        <div id="excelStatus" class="status">
+
+                            No Excel selected
+
+                        </div>
+
+                        <button id="downloadExcelBtn" class="download-excel-btn">
+
+                            ⬇ Download Excel Format
+
+                        </button>
+
+                    </section>
+
+
+
+                    <!-- Photos -->
+
+                    <section class="panel">
+
+                        <h2>
+                            2. Employee Photos
+                        </h2>
+
+
+                        <label class="upload">
+
+                            <b>
+                                📷 Upload Photos
+                            </b>
+
+
+                            <input id="photoFiles" type="file" accept="image/*" multiple>
+
+                        </label>
+
+
+                        <div id="photoStatus" class="status">
+
+                            No photos selected
+
+                        </div>
+
+
+                        <small>
+                            Photo filename must match EMP ID.
+                            Example: 001.jpg
+                        </small>
+
+                    </section>
+
+
+
+                    <!-- Company Details -->
+
+                    <section class="panel">
+
+                        <h2>
+                            3. Company Details
+                        </h2>
+
+
+                        <label>
+
+                            Company Name
+
+                            <input id="companyName" value="APEX COCO AND SOLAR ENERGY LIMITED">
+
+                        </label>
+
+
+                        <label>
+
+                            Address Line 1
+
+                            <input id="address1" value="Factory: 70-1, Devanallur, Chellampalayam Post,">
+
+                        </label>
+
+
+                        <label>
+
+                            Address Line 2
+
+                            <input id="address2" value="Dharapuram TK, Tirupur District - 638 672">
+
+                        </label>
+
+
+                        <label>
+
+                            Address Line 3
+
+                            <input id="address3" value="Tamil Nadu, India.">
+
+                        </label>
+
+                    </section>
+
+
+
+                    <!-- Design -->
+
+                    <section class="panel">
+
+                        <h2>
+                            4. Design
+                        </h2>
+
+
+                        <div class="colors">
+
+                            <label>
+
+                                Header
+
+                                <input id="headerColor" type="color" value="#f3f33d">
+
+                            </label>
+
+                        </div>
+
+                    </section>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =========================================
+         BUTTONS
+    ========================================== -->
+
+        <footer>
+
+            <div class="btn-container">
+
+
+                <button id="generateBtn" class="generate-btn">
+
+                    Generate ID Cards
+
+                </button>
+
+
+                <button id="pdfBtn" class="pdf-btn">
+
+                    Generate PDF
+
+                </button>
+
+
+                <button id="printBtn" class="print-btn">
+
+                    Print
+
+                </button>
+
+
+                <button id="clearBtn" class="clear-btn">
+
+                    Clear
+
+                </button>
+
+
+            </div>
+
+        </footer>
+
+
+
+        <!-- =========================================
+         A4 CARDS CONTAINER
+    ========================================== -->
+
+        <div id="cardsContainer" class="cards-container">
+
+
+            <!--
+            JavaScript automatically creates
+            A4 pages here.
+
+            1 A4 page = 8 cards
+            2 columns x 4 rows
+        -->
+
+
+            <!-- =====================================
+             ID CARD TEMPLATE
+        ====================================== -->
+
+            <div class="id-card card-template">
+
+
+                <!-- HEADER -->
+
+                <div class="card-header">
+
+
+                    <div class="logo-area">
+
+                        <img src="apex logo.jpg" class="company-logo" alt="Company Logo">
+
+                    </div>
+
+
+                    <div class="company-area">
+
+
+                        <div class="company-name">
+
+                            APEX COCO AND SOLAR ENERGY LIMITED
+
+                        </div>
+
+
+                        <div class="company-address">
+
+                            <div class="address1">
+
+                                Factory: 70-1, Devanallur, Chellampalayam Post
+
+                            </div>
+
+
+                            <div class="address2">
+
+                                Dharapuram TK, Tirupur District - 638 672
+
+                            </div>
+
+
+                            <div class="address3">
+
+                                Tamil Nadu, India.
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- BODY -->
+
+                <div class="card-body">
+
+
+                    <!-- PHOTO -->
+
+                    <div class="photo-box">
+
+                        <img class="employee-photo" alt="Employee Photo">
+
+                        <span class="photo-placeholder">
+
+                            PHOTO
+
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- DETAILS -->
+
+                    <div class="details">
+
+
+                        <div class="detail">
+
+                            <span>EMP ID</span>
+
+                            <b>:</b>
+
+                            <strong class="emp-id"></strong>
+
+                        </div>
+
+
+                        <div class="detail">
+
+                            <span>EMP NAME</span>
+
+                            <b>:</b>
+
+                            <strong class="emp-name"></strong>
+
+                        </div>
+
+
+                        <div class="detail">
+
+                            <span>DEPT</span>
+
+                            <b>:</b>
+
+                            <strong class="dept"></strong>
+
+                        </div>
+
+
+                        <div class="detail">
+
+                            <span>SUB-DEPT</span>
+
+                            <b>:</b>
+
+                            <strong class="sub-dept"></strong>
+
+                        </div>
+
+
+                        <div class="detail">
+
+                            <span>DOJ</span>
+
+                            <b>:</b>
+
+                            <strong class="doj"></strong>
+
+                        </div>
+
+
+                        <div class="detail">
+
+                            <span>GENDER</span>
+
+                            <b>:</b>
+
+                            <strong class="gender"></strong>
+
+                        </div>
+
+
+                        <div class="detail">
+
+                            <span>DOB</span>
+
+                            <b>:</b>
+
+                            <strong class="dob"></strong>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- SIGNATURE -->
+
+                    <div class="signature-area">
+
+                        <img src="signature.png" class="signature" alt="Signature">
+
+
+                        <div class="authority">
+
+                            ISSUING AUTHORITY
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </main>
+
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
