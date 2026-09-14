@@ -75,7 +75,6 @@ if (downloadExcelBtn) {
         () => {
 
             const data = [
-
                 {
                     "EMP ID": "001",
                     "EMP NAME": "Sample Employee",
@@ -83,7 +82,8 @@ if (downloadExcelBtn) {
                     "SUB DEPARTMENT": "ADMIN",
                     "DOJ": "01-01-2025",
                     "GENDER": "Male",
-                    "DOB": "10-05-1995"
+                    "DOB": "10-05-1995",
+                    "RESIDENCE": "LabourShed 1"
                 },
 
                 {
@@ -93,9 +93,9 @@ if (downloadExcelBtn) {
                     "SUB DEPARTMENT": "SOLAR",
                     "DOJ": "15-02-2025",
                     "GENDER": "Female",
-                    "DOB": "20-08-1996"
+                    "DOB": "20-08-1996",
+                    "RESIDENCE": "Dayscholar"
                 }
-
             ];
 
 
@@ -110,7 +110,8 @@ if (downloadExcelBtn) {
                 { wch: 22 },
                 { wch: 15 },
                 { wch: 12 },
-                { wch: 15 }
+                { wch: 15 },
+                { wch: 18 }
             ];
 
 
@@ -128,7 +129,7 @@ if (downloadExcelBtn) {
             XLSX.writeFile(
                 workbook,
                 "Workforce IdCard Format.xlsx"
-            );  
+            );
 
         }
     );
@@ -180,7 +181,7 @@ excelFile.addEventListener(
 
                     const worksheet =
                         workbook.Sheets[
-                            sheetName
+                        sheetName
                         ];
 
 
@@ -599,6 +600,16 @@ function generateCards() {
                 );
 
 
+            const residence =
+                getValue(
+                    employee,
+                    [
+                        "RESIDENCE",
+                        "Residence"
+                    ]
+                );
+
+
             // =================================
             // SET EMPLOYEE DATA
             // =================================
@@ -773,8 +784,44 @@ function generateCards() {
 
             if (header) {
 
+                let residenceColor =
+                    "";
+
+                const residenceValue =
+                    String(residence)
+                        .trim()
+                        .toLowerCase();
+
+                if (residenceValue === "dayscholar") {
+
+                    residenceColor =
+                        "#C3D79A";
+
+                } else if (
+                    residenceValue === "labourshed 2"
+                ) {
+
+                    residenceColor =
+                        "#CDC0DA";
+
+                } else if (
+                    residenceValue === "hosteller"
+                ) {
+
+                    residenceColor =
+                        "#B7DDE8";
+
+                } else if (
+                    residenceValue === "labourshed 1"
+                ) {
+
+                    residenceColor =
+                        "#f3f33d";
+
+                }
+
                 header.style.backgroundColor =
-                    headerColor.value;
+                    residenceColor;
 
             }
 

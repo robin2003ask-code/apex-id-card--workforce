@@ -51,7 +51,7 @@ header {
 
     border-bottom-left-radius: px;
 
-    border-bottom-right-radius:6px;
+    border-bottom-right-radius: 6px;
 
 }
 
@@ -112,7 +112,7 @@ header h1 {
 
 .panel {
 
-    background: linear-gradient(to right , rgb(16, 112, 237), rgb(8, 11, 184));
+    background: linear-gradient(to right, rgb(16, 112, 237), rgb(8, 11, 184));
 
     padding: 15px;
 
@@ -268,28 +268,19 @@ header h1 {
 
 
 /* =========================================
-   COLORS
+   COLORS Code visible
 ========================================= */
 
-.colors {
+.colors div{
 
-    display: grid;
-
-    grid-template-columns: 1fr;
-
-    gap: 8px;
-
-}
-
-
-.colors input {
-
+    height: 45px;
+    
     width: 100%;
 
-    height: 40px;
+    margin-top: 7px;
 
-    margin-top: 4px;
-
+    border-radius: 8px;
+    
 }
 
 
@@ -449,7 +440,7 @@ small {
     grid-template-columns: 90mm 90mm;
 
     grid-template-rows:
-       repeat(4, 56.25mm);
+        repeat(4, 56.25mm);
 
     column-gap: 10mm;
 
@@ -460,8 +451,7 @@ small {
     justify-content: center;
 
     box-shadow:
-        0 3px 15px
-        rgba(0, 0, 0, 0.20);
+        0 3px 15px rgba(0, 0, 0, 0.20);
 
 }
 
@@ -472,12 +462,12 @@ small {
 
 .id-card {
 
-    width: 90mm;
+    width: 84.9mm;
 
-    height: 56.25mm;
+    height: 51.14mm;
 
     border:
-        0.5mm solid black;
+        2px solid black;
 
     position: relative;
 
@@ -506,7 +496,7 @@ small {
 
 .card-header {
 
-    height: 35%;
+    height: 33%;
 
     display: grid;
 
@@ -516,7 +506,7 @@ small {
     border-bottom:
         0.4mm solid #111;
 
-    background: #f3f33d;
+    background: white;
 
 }
 
@@ -547,7 +537,7 @@ small {
 
 .company-logo {
 
-    width: 95%;
+    width: 93%;
 
     height: 95%;
 
@@ -572,8 +562,8 @@ small {
 
     text-align: center;
 
-    padding: 
-       1mm 2mm;
+    padding:
+        1mm 2mm;
 
 }
 
@@ -581,7 +571,7 @@ small {
 .company-name {
 
 
-    font-size: 3.2mm;
+    font-size: 3mm;
 
     font-weight: 700;
 
@@ -592,21 +582,9 @@ small {
 }
 
 
-.address1{
+.address1 {
 
-    font-size: 2.8mm;
-
-    font-weight: 700;
-
-    line-height: 1.12;
-
-    color: #000;
-
-}
-
-.address2{
-
-    font-size: 2.8mm;
+    font-size: 2.7mm;
 
     font-weight: 700;
 
@@ -616,9 +594,21 @@ small {
 
 }
 
-.address3{
+.address2 {
 
-    font-size: 2.8mm;
+    font-size: 2.7mm;
+
+    font-weight: 700;
+
+    line-height: 1.12;
+
+    color: #000;
+
+}
+
+.address3 {
+
+    font-size: 2.7mm;
 
     font-weight: 700;
 
@@ -650,9 +640,9 @@ small {
 
     position: absolute;
 
-    left: 2.2mm;
+    left: 1.3mm;
 
-    top: 2.8mm;
+    top: 1.2mm;
 
     width: 25mm;
 
@@ -713,11 +703,11 @@ small {
 
     position: absolute;
 
-    left: 30mm;
+    left: 28.2mm;
 
-    top: 2.5mm;
+    top: 0.8mm;
 
-    right: 2mm;
+    right: 2.8mm;
 
     color: #174a82;
 
@@ -740,7 +730,7 @@ small {
     grid-template-columns:
         20mm 3mm 1fr;
 
-    line-height: 1.55;
+    line-height: 1.45;
 
     white-space: nowrap;
 
@@ -755,12 +745,20 @@ small {
 
     text-overflow: ellipsis;
 
+    position: relative;
+
+    right: 4mm;
+
 }
 
 
 .detail b {
 
     color: #174a82;
+
+    position: relative;
+
+    right: 3.5mm;
 
 }
 
@@ -773,7 +771,7 @@ small {
 
     position: absolute;
 
-    right: 1.5mm;
+    right: 0.4mm;
 
     bottom: 1mm;
 
@@ -788,7 +786,7 @@ small {
 
     display: block;
 
-    max-width: 22mm;
+    max-width: 28mm;
 
     max-height: 10mm;
 
@@ -802,7 +800,7 @@ small {
 
 .authority {
 
-    font-size: 2.3mm;
+    font-size: 2.6mm;
 
     font-weight: 800;
 
