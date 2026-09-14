@@ -518,7 +518,7 @@ small {
         31% 69%;
 
     border-bottom:
-        0.4mm solid #111;
+        2px solid #111;
 
     background: white;
 
@@ -534,7 +534,7 @@ small {
     background: white;
 
     border-right:
-        0.4mm solid #111;
+        2px solid #111;
 
     display: flex;
 
@@ -665,7 +665,7 @@ small {
     background: white;
 
     border:
-        0.4mm solid black;
+        1.5px solid black;
 
     display: flex;
 
