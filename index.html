@@ -14,12 +14,14 @@
 
     <!-- Excel -->
     <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/exceljs@4.4.0/dist/exceljs.min.js"></script>
 
     <!-- HTML to Canvas -->
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 
     <!-- PDF -->
     <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docx@9.5.1/build/index.umd.js"></script>
 
 </head>
 
@@ -250,7 +252,7 @@
 
         <footer>
 
-            <div class="btn-container">
+            <div class="btn-container" id="btn-container">
 
 
                 <button id="generateBtn" class="generate-btn">
@@ -266,6 +268,18 @@
 
                 </button>
 
+
+                <button id="excelCardBtn" class="excel-card-btn">
+
+                    Download ID Card Excel
+
+                </button>
+
+                <button id="wordBtn" class="word-btn">
+
+                    Download ID Card Word
+
+                </button>
 
                 <button id="printBtn" class="print-btn">
 
@@ -317,7 +331,7 @@
 
                     <div class="logo-area">
 
-                        <img src="apex logo.jpg" class="company-logo" alt="Company Logo">
+                        <img src="logo.jpg" class="company-logo" alt="Company Logo">
 
                     </div>
 

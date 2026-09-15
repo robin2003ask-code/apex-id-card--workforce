@@ -14,6 +14,9 @@ const excelStatus =
 const photoStatus =
     document.getElementById("photoStatus");
 
+const btnContainer =
+    document.getElementById("btn-container");
+
 const generateBtn =
     document.getElementById("generateBtn");
 
@@ -412,8 +415,23 @@ generateBtn.addEventListener(
 
         // Hide input page
 
+        generateBtn.style.display =  
+            "none";
+
+        pdfBtn.style.display = 
+            "block";
+
+        excelCardBtn.style.display = 
+            "block";
+            
+        wordBtn.style.display = 
+            "block";    
+
         pageLayout.style.display =
             "none";
+
+        printBtn.style.display = 
+            "block";
 
 
         // Show cards
@@ -967,7 +985,7 @@ pdfBtn.addEventListener(
                 await html2canvas(
                     pages[i],
                     {
-                        scale: 2,
+                        scale: 3,
 
                         useCORS: true,
 
@@ -1036,6 +1054,110 @@ printBtn.addEventListener(
 );
 
 
+
+
+// =========================================
+// ID CARD EXCEL EXPORT
+// =========================================
+
+const excelCardBtn = document.getElementById("excelCardBtn");
+
+function exportPageCanvas(page) {
+    return waitForExportImages(page).then(() => html2canvas(page, {
+        scale: 4,
+        useCORS: true,
+        backgroundColor: "#ffffff",
+        logging: false
+    }));
+}
+
+function waitForExportImages(root) {
+    return Promise.all(Array.from(root.querySelectorAll("img")).map(img => {
+        if (img.complete && img.naturalWidth) return Promise.resolve();
+        return new Promise(resolve => {
+            img.addEventListener("load", resolve, { once: true });
+            img.addEventListener("error", resolve, { once: true });
+        });
+    }));
+}
+
+function downloadBlob(blob, filename) {
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+if (excelCardBtn) {
+    excelCardBtn.addEventListener("click", async () => {
+        const pages = document.querySelectorAll(".a4-page");
+        if (!pages.length) { alert("Please generate ID cards first."); return; }
+        if (!window.ExcelJS) { alert("Excel library could not be loaded. Check internet connection."); return; }
+        const old = excelCardBtn.textContent;
+        excelCardBtn.disabled = true;
+        excelCardBtn.textContent = "Creating Excel...";
+        try {
+            const wb = new ExcelJS.Workbook();
+            wb.creator = "Workforce ID Card";
+            wb.created = new Date();
+            for (let i = 0; i < pages.length; i++) {
+                const ws = wb.addWorksheet(`ID Cards ${i + 1}`);
+                ws.views = [{ showGridLines: false }];
+                ws.pageSetup = { paperSize: 9, orientation: "portrait", fitToPage: true, fitToWidth: 1, fitToHeight: 1,
+                    margins: { left: 0.15, right: 0.15, top: 0.2, bottom: 0.2, header: 0, footer: 0 } };
+                ws.getColumn(1).width = 48; ws.getColumn(2).width = 48; ws.getColumn(3).width = 3;
+                for (let r=1; r<=45; r++) ws.getRow(r).height = 13;
+                const canvas = await exportPageCanvas(pages[i]);
+                const imageId = wb.addImage({ base64: canvas.toDataURL("image/png"), extension: "png" });
+                ws.addImage(imageId, { tl: { col: 0, row: 0 }, br: { col: 2, row: 44 } });
+                ws.pageSetup.printArea = "A1:C44";
+            }
+            const buffer = await wb.xlsx.writeBuffer();
+            downloadBlob(new Blob([buffer], { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" }), "Employee-ID-Cards.xlsx");
+        } catch (e) {
+            console.error(e); alert("Excel download failed. Please try again.");
+        } finally { excelCardBtn.disabled = false; excelCardBtn.textContent = old; }
+    });
+}
+
+// =========================================
+// ID CARD WORD EXPORT
+// =========================================
+
+const wordBtn = document.getElementById("wordBtn");
+
+if (wordBtn) {
+    wordBtn.addEventListener("click", async () => {
+        const pages = document.querySelectorAll(".a4-page");
+        if (!pages.length) { alert("Please generate ID cards first."); return; }
+        if (!window.docx) { alert("Word library could not be loaded. Check internet connection."); return; }
+        const old = wordBtn.textContent;
+        wordBtn.disabled = true;
+        wordBtn.textContent = "Creating Word...";
+        try {
+            const { Document, Packer, Paragraph, ImageRun, SectionType } = window.docx;
+            const sections = [];
+            for (let i=0; i<pages.length; i++) {
+                const canvas = await exportPageCanvas(pages[i]);
+                const bytes = Uint8Array.from(atob(canvas.toDataURL("image/png").split(",")[1]), c => c.charCodeAt(0));
+                sections.push({
+                    properties: { type: i === 0 ? SectionType.CONTINUOUS : SectionType.NEXT_PAGE,
+                        page: { size: { width: 11906, height: 16838 }, margin: { top:0,right:0,bottom:0,left:0,header:0,footer:0 } } },
+                    children: [new Paragraph({ spacing:{before:0,after:0}, children:[new ImageRun({ data:bytes, transformation:{width:794,height:1123} })] })]
+                });
+            }
+            const doc = new Document({ creator:"Workforce ID Card", title:"Employee ID Cards", sections });
+            downloadBlob(await Packer.toBlob(doc), "Employee-ID-Cards.docx");
+        } catch (e) {
+            console.error(e); alert("Word download failed. Please try again.");
+        } finally { wordBtn.disabled = false; wordBtn.textContent = old; }
+    });
+}
+
 // =========================================
 // CLEAR
 // =========================================
@@ -1073,6 +1195,21 @@ clearBtn.addEventListener(
 
         pageLayout.style.display =
             "block";
+
+        generateBtn.style.display =  
+            "block";
+
+        pdfBtn.style.display = 
+            "none";
+
+        excelCardBtn.style.display = 
+            "none";
+            
+        wordBtn.style.display = 
+            "none";     
+
+        printBtn.style.display = 
+            "none";
 
     }
 );
