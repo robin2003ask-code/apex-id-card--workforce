@@ -440,7 +440,7 @@ small {
 
     width: 100%;
 
-    margin: 30px auto;
+    margin: 0px auto;
 
 }
 
@@ -464,7 +464,7 @@ small {
 
     margin: 20px auto;
 
-    padding: 12.875mm 13.5mm;
+    padding: 5.875mm 13.5mm;
 
     background: white;
 
@@ -473,11 +473,11 @@ small {
     grid-template-columns: 90mm 90mm;
 
     grid-template-rows:
-        repeat(4, 56.25mm);
+        repeat(5, 56.25mm);
 
     column-gap: 10mm;
 
-    row-gap: 12mm;
+    row-gap: 2mm;
 
     align-content: start;
 

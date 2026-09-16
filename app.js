@@ -473,7 +473,7 @@ function generateCards() {
             // =================================
 
             if (
-                index % 8 === 0
+                index % 10 === 0
             ) {
 
                 currentPage =
@@ -488,7 +488,7 @@ function generateCards() {
 
                 currentPage.dataset.page =
                     Math.floor(
-                        index / 8
+                        index / 10
                     ) + 1;
 
 
