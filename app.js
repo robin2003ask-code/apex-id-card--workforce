@@ -80,24 +80,24 @@ if (downloadExcelBtn) {
             const data = [
                 {
                     "EMP ID": "001",
-                    "EMP NAME": "Sample Employee",
+                    "EMP NAME": "SAMPLE EMPLOYEE 1",
                     "DEPARTMENT": "HR",
                     "SUB DEPARTMENT": "ADMIN",
                     "DOJ": "01-01-2025",
                     "GENDER": "Male",
                     "DOB": "10-05-1995",
-                    "RESIDENCE": "LabourShed 1"
+                    "RESIDENCE": "LABOUR SHED-I"
                 },
 
                 {
                     "EMP ID": "002",
-                    "EMP NAME": "Sample Employee 2",
+                    "EMP NAME": "SAMPLE EMPLOYEE 2",
                     "DEPARTMENT": "PRODUCTION",
                     "SUB DEPARTMENT": "SOLAR",
                     "DOJ": "15-02-2025",
                     "GENDER": "Female",
                     "DOB": "20-08-1996",
-                    "RESIDENCE": "Dayscholar"
+                    "RESIDENCE": "DAYSCHOLAR"
                 }
             ];
 
@@ -807,30 +807,30 @@ function generateCards() {
 
                 const residenceValue =
                     String(residence)
-                        .trim()
-                        .toLowerCase();
+                        //.trim()
+                        //.toLowerCase();
 
-                if (residenceValue === "dayscholar") {
+                if (residenceValue === "DAYSCHOLAR") {
 
                     residenceColor =
-                        "#C3D79A";
+                        "#adc086";
 
                 } else if (
-                    residenceValue === "labourshed 2"
+                    residenceValue === "LABOUR SHED-II"
                 ) {
 
                     residenceColor =
-                        "#CDC0DA";
+                        "#c3add8";
 
                 } else if (
-                    residenceValue === "hosteller"
+                    residenceValue === "HOSTELLER"
                 ) {
 
                     residenceColor =
-                        "#B7DDE8";
+                        "#a2cbd6";
 
                 } else if (
-                    residenceValue === "labourshed 1"
+                    residenceValue === "LABOUR SHED-I"
                 ) {
 
                     residenceColor =
