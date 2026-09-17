@@ -981,16 +981,24 @@ pdfBtn.addEventListener(
             }
 
 
+            // Wait until every logo/photo/signature is fully decoded before capture.
+            // Use the same high-resolution capture scale used by the Excel export.
+            await waitForExportImages(pages[i]);
+
             const canvas =
                 await html2canvas(
                     pages[i],
                     {
-                        scale: 3,
+                        scale: 4,
 
                         useCORS: true,
 
                         backgroundColor:
-                            "#ffffff"
+                            "#ffffff",
+
+                        logging: false,
+
+                        imageTimeout: 0
                     }
                 );
 
