@@ -975,39 +975,29 @@ pdfBtn.addEventListener(
         ) {
 
             if (i > 0) {
-
                 pdf.addPage();
-
             }
 
-
-            // Wait until every logo/photo/signature is fully decoded before capture.
-            // Use the same high-resolution capture scale used by the Excel export.
+            // Wait until every logo/photo/signature is fully decoded
+            // before capturing the page. This prevents soft/blank images.
             await waitForExportImages(pages[i]);
 
             const canvas =
                 await html2canvas(
                     pages[i],
                     {
-                        scale: 4,
-
+                        // Higher render density for sharper text and photos.
+                        // Card dimensions/alignment are unchanged.
+                        scale: 6,
                         useCORS: true,
-
-                        backgroundColor:
-                            "#ffffff",
-
-                        logging: false,
-
-                        imageTimeout: 0
+                        backgroundColor: "#ffffff",
+                        imageTimeout: 0,
+                        logging: false
                     }
                 );
 
-
-            const image =
-                canvas.toDataURL(
-                    "image/png"
-                );
-
+            // PNG keeps the rendered page lossless (no JPEG photo compression).
+            const image = canvas.toDataURL("image/png");
 
             pdf.addImage(
                 image,
@@ -1015,9 +1005,10 @@ pdfBtn.addEventListener(
                 0,
                 0,
                 210,
-                297
+                297,
+                undefined,
+                "NONE"
             );
-
         }
 
 
