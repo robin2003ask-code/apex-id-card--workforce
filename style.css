@@ -322,7 +322,7 @@ small {
 
 .btn-container {
 
-    margin-top: 40px;
+    margin-top: 60px;
 
     display: flex;
 
@@ -357,14 +357,12 @@ small {
 
     transition: transform 0.4s ease;
 
-    
-
 }
 
 
 .btn-container button:hover {
 
-    transform: translatey(-10px);
+    transform: translatey(-16px);
 
     opacity: 20;
 
@@ -387,7 +385,6 @@ small {
     background: linear-gradient(to right, rgb(4, 91, 4) , lime);
 
     color: white;
-
 }
 
 .excel-card-btn{
