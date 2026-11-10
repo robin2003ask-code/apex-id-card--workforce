@@ -1,345 +1,549 @@
-/* =========================================
-   RESET
-========================================= */
-
 * {
     box-sizing: border-box;
 }
 
-
-html,
 body {
+    background-image: url("asset/LoginBackground.png");
 
-    margin: 0;
+    background-size: cover;
 
-    padding: 0;
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    background-attachment: fixed;
+}
+
+/* Nav Bar */
+
+.navbar {
+
+    position: fixed;
+
+    width: 100%;
+
+    display: none;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    border-radius: 10px;
+
+    text-decoration-line: none;
+
+    color: white;
 
 }
 
+.navbar header {
 
-body {
-
-    color: #18212b;
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
+    color: black;
 
 }
 
+.navbar ul {
 
-/* =========================================
-   HEADER
-========================================= */
+    list-style: none;
 
-header {
+    padding: 5px;
 
-    height: 80px;
+    display: flex;
 
-    background-color: rgb(2, 2, 81);
+    justify-content: space-around;
+
+    align-items: center;
+
+    margin-right: 10px;
+
+    border-radius: 5px;
+
+    font-size: 30px;
+
+    background: #000;
+
+    height: 50px;
+
+
+}
+
+.navbar ul a{
+
+    color: white;
+
+    text-decoration-line: none;
+
+    padding: 5px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition: 0.4s ease-in;
+}
+
+
+
+
+/* Dropdown */
+
+.dropdown {
+
+    position: relative;
+}
+
+.dropdown-content {
+
+    display: none;
+
+    position: absolute;
+
+    top: 100%;
+
+    left: 0;
+
+    min-width: 160px;
+
+    background-color: black;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+    border-radius: 5px;
+
+    z-index: 100;
+}
+
+.dropdown-content a {
+
+    color: white;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px;
+}
+
+/* Hover */
+
+.dropdown:hover .dropdown-content {
+
+    display: block;
+}
+
+/* Dropdown item hover */
+
+.dropdown-content a:hover {
+
+    background-color: #f1f1f1;
+}
+
+/*Login Section*/
+.login-section {
+
+    position: fixed;
+
+    width: 100%;
+
+    height: 100%;
+
+    justify-self: center;
+
+    justify-content: center;
 
     display: flex;
 
     align-items: center;
 
-    justify-content: center;
-
-    color: white;
-
 }
 
+.login-container {
 
-header h1 {
+    position: fixed;
 
-    margin: 0;
+    display: grid;
 
-    font-size: 30px;
+    grid-template-columns: 1fr 1fr;
 
-}
+    height: 600px;
 
+    width: 1000px;
 
-/* =========================================
-   INPUT PAGE
-========================================= */
+    background: white;
 
-.page-layout {
-
-    display: block;
-
-    margin-top: 60px;
-
-}
-
-
-.layout {
-
-    max-width: 1500px;
-
-    margin: auto;
-
-    padding: 20px;
-
-}
-
-
-/* =========================================
-   INPUT BAR
-========================================= */
-
-.input-bar {
-
-    display: flex;
-
-    flex-wrap: wrap;
-
-    justify-content: center;
-
-    gap: 20px;
-
-}
-
-
-/* =========================================
-   PANEL
-========================================= */
-
-.panel {
-
-    background: linear-gradient(to right, rgb(16, 112, 237), #1824c9);
-
-    padding: 15px;
-
-    min-height: 300px;
-
-    width: 350px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 
     border-radius: 10px;
 
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 10px;
+}
 
-    transition: transform 0.4s ease;
+.login-container video {
 
-    opacity: 2.0;
+    height: 580px;
+
+    width: 500px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
 
 }
 
-.panel:hover {
+.login-container .loginform {
 
-    transform: scale(1.1);
-
-    opacity: 50;
-
-}
-
-.panel h2 {
-
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-    color: yellow;
-
-    font-size: 25px;
-
-    margin:
-        0 0 12px;
-
-}
-
-.panel input{
-
-    height: 50px;
-
-}
-
-/* =========================================
-   UPLOAD
-========================================= */
-
-.upload {
-
-    display: block;
-
-    border:
-        2px solid black;
-
-    padding: 20px;
-
-    border-radius: 8px;
-
-    background-color: #e8f1ff;
-
-    margin-top: 45px;
-
-    cursor: pointer;
-
-    color: #111;
-
-
-}
-
-
-.upload input {
-
-    display: block;
-
-    width: 100%;
-
-    margin-top: 50px;
-
-}
-
-
-
-/* =========================================
-   DOWNLOAD EXCEL FORMAT
-========================================= */
-
-.download-excel-btn {
-
-    width: 100%;
-
-    margin-top: 35px;
-
-    padding: 12px;
-
-    border: 2px solid white;
-
-    border-radius: 8px;
-
-    background: #b30441;
-
-    color: white;
-
-    font-size: 13px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition: 0.2s;
-
-}
-
-
-.download-excel-btn:hover {
-
-    background: black;
-
-    color: white;
-
-    transform: translateY(-2px);
-
-}
-
-
-/* =========================================
-   INPUT
-========================================= */
-
-.panel label:not(.upload) {
-
-    display: block;
-
-    font-size: 14px;
-
-    color: white;
-
-    font-weight: bold;
-
-    margin: 10px 0;
-
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
-}
-
-
-.panel label:not(.upload) input {
-
-    width: 100%;
-
-    padding: 8px;
-
-    border:
-        1px solid black;
-
-    border-radius: 6px;
-
-    margin-top: 5px;
-
-}
-
-
-/* =========================================
-   COLORS Code visible
-========================================= */
-
-.colors div{
-
-    height: 45px;
-    
-    width: 100%;
-
-    margin-top: 7px;
-
-    border-radius: 8px;
-    
-}
-
-
-/* =========================================
-   STATUS
-========================================= */
-
-.status {
-
-    font-size: 20px;
-
-    font-weight: 900;
-
-    font-family: italic;
-
-    color: white;
-
-    margin-top: 20px;
-
-    font-weight: bold;
-
-}
-
-
-small {
-
-    font-size: 12px;
-
-    color: white;
-
-}
-
-
-/* =========================================
-   BUTTONS
-========================================= */
-
-.btn-container {
-
-    margin-top: 60px;
+    background: ;
 
     display: flex;
 
-    justify-content: center;
+    flex-direction: column;
 
-    gap: 40px;
+    justify-content: ;
+
+    align-items: center;
+
+    gap: 50px;
+
+    padding: 40px;
+}
+
+.loginform h1 {
+
+    font-size: 50px;
+
+    margin-top: 0;
+}
+
+.loginform input {
+
+    margin-top: 10px;
+
+    padding: 30px;
+
+    font-size: 18px;
+
+    width: 100%;
+
+    height: 50px;
+
+    border-radius: 5px;
+
+    outline: none;
+
+    border: none;
+
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.loginform button {
+
+    margin-top: 10px;
+
+    padding: 10px;
+
+    font-size: 20px;
+
+    height: 55px;
+
+    width: 100%;
+
+    background: rgb(11, 111, 210);
+
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    border: none;
+
+    outline: none;
+
+    color: white;
+
+    font-weight: 700;
+
+    border-radius: 5px;
+}
+
+.loginform button:hover {
+
+    transform: scale(0.97);
+}
+
+/* IdCard Page*/
+
+.idCardPage {
+
+    display: none;
+
+    grid-template-columns: 4fr 1fr;
+
+    padding-top: 80px;
+}
+
+.input-section {
+
+    align-self: center;
+
+    display: flex;
+
+    justify-content: space-evenly;
 
     flex-wrap: wrap;
 
-    padding: 10px;
+    gap: 100px;
+}
+
+.panel {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    flex-direction: column;
+
+    padding: 5px;
+
+    gap: 0px;
+
+    background: linear-gradient(to right, rgb(16, 112, 237), #1824c9);
+
+    height: 280px;
+
+    width: 500px;
+
+    border-radius: 10px;
+
+    color: white;
 
 }
 
 
+.panel #downloadExcelBtn {
+
+    margin-top: 5px;
+
+    width: 50%;
+
+    height: 40px;
+
+    border-radius: 5px;
+
+    outline: none;
+
+    border: none;
+
+    color: black;
+
+}
+
+#downloadExcelBtn:hover {
+
+    background: lime;
+}
+
+.panel small {
+
+    margin-top: 5px;
+
+    height: 40px;
+}
+
+.upload {
+
+    margin-top: 20px;
+
+    height: 80px;
+
+    align-self: end;
+
+    width: auto;
+
+    text-align: end;
+
+    background: white;
+
+    align-content: center;
+
+    padding: 5px;
+
+    border-radius: 5px;
+
+    color: black;
+
+}
+
+.status {
+
+    background: white;
+
+    height: 30px;
+
+    width: auto;
+
+    padding: 8px;
+
+    border-radius: 4px;
+
+    align-self: flex-end;
+
+    align-content: center;
+
+    margin-top: 15px;
+
+    text-align: center;
+
+    color: black;
+}
+
+.idCardMenu {
+
+    display: flex;
+
+    flex-direction: column;
+    
+    padding-top: 20px;
+
+}
+
+.menu-inside {
+
+    background: dodgerblue;
+
+    opacity: 0%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    border-radius: 10px;
+
+    margin: 0px;
+
+    padding: 10px;
+
+    height: 75vh;
+
+    overflow-y: auto;
+
+    scroll-behavior: smooth;
+
+}
+
+.openMenuIcon {
+
+    position: fixed;
+
+    height: 25px;
+
+    z-index: 1;
+
+    right: 20px;
+}
+
+.closeMenuIcon {
+
+    position: fixed;
+
+    height: 25px;
+
+    right: 25px;
+}
+
+.menu-inside .address-details {
+
+    display: flex;
+
+    flex-direction: column;
+
+    background: white;
+
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    padding: 10px;
+
+    border-radius: 10px;
+
+    row-gap: 10px;
+
+}
+
+.menu-inside label {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-top: 10px;
+
+    color: red;
+
+    font-weight: 800;
+}
+
+.address-details input {
+
+    height: 40px;
+
+    width: 300px;
+
+    border-radius: 5px;
+
+    outline: none;
+
+    border: 0.5px solid gray;
+
+    padding: 5px;
+}
+
+.menu-inside .colour-details {
+
+    display: flex;
+
+    flex-direction: column;
+
+    background: white;
+
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    padding: 10px;
+
+    border-radius: 10px;
+
+    margin-top: 10px;
+}
+
+.colour-details input {
+
+    height: 40px;
+
+    border-radius: 5px;
+
+    border: none;
+
+    outline: none;
+}
+
+/* footer Section*/
+
+.btn-container {
+
+    position: fixed;
+
+    z-index: 5;
+
+    margin-top: 0px;
+
+    display:none;
+
+    justify-self: center;
+
+    gap: 100px;
+
+    flex-wrap: wrap;
+}
+
 .btn-container button {
 
-    width: 480px;
+    width: 300px;
 
     height: 58px;
 
@@ -347,7 +551,7 @@ small {
 
     outline: none;
 
-    border: 1.5px solid;
+    border: none;
 
     cursor: pointer;
 
@@ -359,95 +563,54 @@ small {
 
 }
 
-
-.btn-container button:hover {
-
-    transform: translatey(-16px);
-
-    opacity: 20;
-
-}
-
-
 .generate-btn {
 
-    background: linear-gradient(to right, dodgerblue , blue);
-
-    color: white;
+    background: linear-gradient(to right, dodgerblue, blue);
 
 }
-
-
-.pdf-btn {
-
-    display: none;
-
-    background: linear-gradient(to right, rgb(4, 91, 4) , lime);
-
-    color: white;
-}
-
-.excel-card-btn{
-
-    display: none;
-
-    background: linear-gradient(to right, rgb(1, 17, 64) , navy);
-
-    color: white;
-
-}
-
-.word-btn{
-
-    display: none;
-
-    background: linear-gradient(to right, rgb(128, 128, 114) , rgb(10, 10, 10));
-
-    color: white;
-
-}
-
-.print-btn {
-
-    display: none;
-
-    background: linear-gradient(to right, rgb(134, 2, 110) , rgb(242, 13, 105));
-
-    color: white;
-
-}
-
 
 .clear-btn {
 
-    background: linear-gradient(to right, rgb(115, 3, 3) , rgb(255, 4, 4));
-
-    color: white;
+    background: linear-gradient(to right, rgb(115, 3, 3), rgb(255, 4, 4));
 
 }
 
-
-/* =========================================
-   CARDS CONTAINER
-========================================= */
-
-.cards-container {
+.btn-container .pdf-btn {
 
     display: none;
 
-    width: 100%;
-
-    margin: 0px auto;
+    background: linear-gradient(to right, rgb(4, 91, 4), lime);
 
 }
 
+/*IdCardPage2 */
+.idCardPage2 {
 
-.cards-container.active {
+    display: none;
 
-    display: block;
-
+    margin-top: 10px;
 }
 
+.cards-container {
+
+    display: flex;
+
+    overflow-x: auto;
+
+    overflow-y: auto;
+
+    gap: 20px;
+
+    padding: 5px;
+
+    gap: 20px;
+
+    height: auto;
+
+    width: auto;
+
+    margin: 5px auto;
+}
 
 /* =========================================
    A4 PAGE
@@ -481,7 +644,9 @@ small {
     justify-content: center;
 
     box-shadow:
-        0 3px 15px rgba(0, 0, 0, 0.20);
+        0 3px 15px rgba(4, 4, 4, 0.2);
+
+    border-radius: 10px;
 
 }
 
@@ -853,149 +1018,139 @@ small {
 
 }
 
+/* =====================================================
+   RESPONSIVE LAYOUT
+   Desktop styles above are intentionally left unchanged.
+   These rules only adapt the existing design on smaller screens.
+===================================================== */
 
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 900px) {
-
-    .a4-page {
-
-        transform-origin: top center;
-
-        transform: scale(0.8);
-
-        margin-bottom: -55px;
-
+@media screen and (max-width: 900px) {
+    .navbar {
+        width: 100%;
     }
 
-}
-
-
-@media (max-width: 700px) {
-
-    .a4-page {
-
-        transform: scale(0.55);
-
-        margin-bottom: -130px;
-
+    .navbar ul {
+        justify-content: center;
+        gap: clamp(16px, 4vw, 40px);
+        margin: 10px;
+        padding: 18px;
     }
 
+    /* The desktop navigation indicator uses fixed pixel positions. */
+    .toggle {
+        display: none !important;
+    }
+
+    .idCardPage {
+        grid-template-columns: minmax(0, 1fr);
+        row-gap: 24px;
+    }
+
+    .input-section {
+        height: auto;
+        gap: 24px;
+        justify-content: center;
+        padding: 16px;
+    }
+
+    .panel {
+        width: min(500px, 100%);
+    }
+
+    .idCardMenu {
+        width: 100%;
+    }
+
+    .menu-inside {
+        position: fixed;
+        top: 72px;
+        right: 12px;
+        width: min(360px, calc(100vw - 24px));
+        height: min(80vh, 700px);
+        z-index: 200;
+    }
+
+    .address-details input {
+        width: 100%;
+        max-width: 100%;
+    }
 
     .btn-container {
-
-        gap: 10px;
-
+        margin: 32px auto;
+        gap: 18px;
+        padding: 0 16px;
     }
-
 
     .btn-container button {
-
-        width: 180px;
-
+        width: min(300px, 100%);
     }
 
-}
-
-
-/* =========================================
-   PRINT
-========================================= */
-
-@page {
-
-    size: A4 portrait;
-
-    margin: 0;
-
-}
-
-
-@media print {
-
-    html,
-    body {
-
-        margin: 0;
-
-        padding: 0;
-
-        background: white;
-
-    }
-
-
-    header,
-    .page-layout,
-    footer {
-
-        display: none !important;
-
-    }
-
-
+    /* Keep the A4 artwork at its original print dimensions. */
     .cards-container {
-
-        display: block !important;
-
-        margin: 0;
-
-        padding: 0;
-
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        justify-content: flex-start;
     }
-
 
     .a4-page {
+        flex: 0 0 210mm;
+    }
+}
 
-        width: 210mm;
+@media screen and (max-width: 600px) {
+    .navbar {
 
-        height: 297mm;
+        justify-content: center;
 
-        margin: 0;
-
-        padding:
-            3.875mm 13.5mm;
-
-        box-shadow: none;
-
-        display: grid;
-
-        grid-template-columns:
-            90mm 90mm;
-
-        grid-template-rows:
-            repeat(4, 56.25mm);
-
-        column-gap: 3mm;
-
-        row-gap: 3mm;
-
-        page-break-after: always;
-
-        break-after: page;
-
+        padding: 0;
     }
 
+    .navbar ul {
 
-    .a4-page:last-child {
-
-        page-break-after: auto;
-
-        break-after: auto;
-
+        width: 100%;
     }
 
-
-    .id-card {
-
-        width: 90mm;
-
-        height: 56.25mm;
-
-        box-shadow: none;
-
+    .navbar a {
+        font-size: 16px;
     }
 
+    .panel {
+        height: auto;
+        min-height: 280px;
+        padding: 12px;
+    }
+
+    .upload {
+        max-width: 100%;
+    }
+
+    .status {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+    }
+
+    .form-container {
+        width: calc(100vw - 32px);
+        max-width: 400px;
+    }
+
+    .menu-inside {
+        top: 64px;
+        right: 8px;
+        width: calc(100vw - 16px);
+        padding: 8px;
+    }
+
+    .btn-container {
+        flex-direction: column;
+        align-items: center;
+        margin: 24px auto;
+        gap: 14px;
+    }
+
+    .btn-container button {
+        width: 100%;
+        max-width: 340px;
+    }
 }

@@ -3,6 +3,8 @@
 
 <head>
 
+    <meta>
+
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,125 +29,147 @@
 
 </head>
 
-
 <body>
-    
 
-    <header>
+    <nav class="navbar">
 
-        <h1>
-            Workforce ID Card 
-        </h1>
+        <header>
+            <h1>HomePage</h1>
+        </header>
 
-    </header>
+        <ul class="nav">
+
+            <li><a href="#" class="home">Home</a></li>
+
+            <li class="dropdown">
+
+                <a href="#" class="menu">Menu</a>
+
+                <div class="dropdown-content">
+
+                    <a href="#" class="menuIdPage">IdCard</a>
+                    <a href="#" class="menuImgReducerPage">KbReducer</a>
+
+                </div>
+
+            </li>
+
+            <li><a href="#" class="about">About</a></li>
+
+            <li><a href="#" class="logoff">LogOff</a></li>
+
+        </ul>
+
+
+
+    </nav>
+
 
 
     <main>
 
+        <!-- Login Section -->
+        <section class="login-section">
 
-        <div class="home-page">
+            <section class="login-container">
 
-            <nav class="navbar">
+                <section class="vide-section">
+                   <video src="asset/CarttonVid.mp4" autoplay muted loop type="CarttonVid/mp4"></video>
 
+                </section>
 
-                
-            </nav>
+                <form class="loginform">
 
+                    <h1 class="login-heading">Hello!</h1>
 
-        </div>
+                    <input class="userNameInput" type="text" placeholder="UserName">
 
+                    <input class="userPassword" type="password" placeholder="Password">
 
+                    <button class="loginBtn" type="submit">Login</button>
 
-        <!-- =========================================
-         INPUT PAGE
-    ========================================== -->
+                </form>
 
-        <div class="page-layout">
+            </section>
 
-
-            <div class="layout">
-
-
-                <div class="input-bar">
-
-
-                    <!-- Excel -->
-
-                    <section class="panel" id="panel1">
-
-                        <h2>
-                            * Data Input
-                        </h2>
+        </section>
 
 
-                        <label class="upload">
+        <!--IdCard Page-->
 
-                            <b>
-                                📊 Upload Excel / CSV
-                            </b>
+        <section class="idCardPage">
+            <!---- IdCard Input Section-->
+            <section class="input-section">
 
+                <section class="panel" id="panel1">
 
-                            <input id="excelFile" type="file" accept=".xlsx,.xls,.csv">
+                    <h2>
 
-                        </label>
+                        📊 Upload Excel / CSV
 
+                    </h2>
 
-                        <div id="excelStatus" class="status">
+                    <button id="downloadExcelBtn" class="download-excel-btn">
 
-                            No Excel selected
+                        ⬇ Download Excel Format
 
-                        </div>
+                    </button>
 
-                        <button id="downloadExcelBtn" class="download-excel-btn">
+                    <label class="upload">
 
-                            ⬇ Download Excel Format
+                        <input id="excelFile" type="file" accept=".xlsx,.xls,.csv">
 
-                        </button>
-
-                    </section>
-
-
-
-                    <!-- Photos -->
-
-                    <section class="panel" id="panel1">
-
-                        <h2>
-                            * Employee Photos
-                        </h2>
+                    </label>
 
 
-                        <label class="upload">
+                    <div id="excelStatus" class="status">
 
-                            <b>
-                                🎥 Upload Photos
-                            </b>
+                        No Excel selected
 
-
-                            <input id="photoFiles" type="file" accept="image/*" multiple>
-
-                        </label>
+                    </div>
 
 
-                        <div id="photoStatus" class="status">
+                </section>
 
-                            No photos selected
+                <!-- Photos -->
 
-                        </div>
+                <section class="panel" id="panel1">
+
+                    <h2>
+                        🎥 Upload Photos
+                    </h2>
+
+                    <small class="imgInstruction">
+                        Photo filename must match EMP ID.
+                        Example: 001
+                    </small>
+
+                    <label class="upload">
+
+                        <input id="photoFiles" type="file" accept="image/*" multiple>
+
+                    </label>
 
 
-                        <small>
-                            Photo filename must match EMP ID.
-                            Example: 001.jpg
-                        </small>
+                    <div id="photoStatus" class="status">
 
-                    </section>
+                        No photos selected
 
+                    </div>
 
+                </section>
 
-                    <!-- Company Details -->
+            </section>
+            <!---- IdCard Menu Section-->
+            <section class="idCardMenu">
 
-                    <section class="panel" id="panel1">
+                <img src="asset/menuBlack.png" class="openMenuIcon">
+
+                <section class="menu-inside">
+
+                    <section class="address-details">
+
+                        <img src="asset/menuClose.png   " class="closeMenuIcon">
 
                         <h2>
                             * Company Address
@@ -189,315 +213,239 @@
 
                     </section>
 
-
-
                     <!-- Design -->
 
-                    <section class="panel">
+                    <section class="colour-details">
 
                         <h2>
                             * IdCard Colors
                         </h2>
 
+                        <label>
 
-                        <div class="colors">
+                            DayScholar
 
-                            <label>
+                            <input class="color-code-div" style="background-color: #adc086">
 
-                                DayScholar
+                        </label>
 
-                                <div class="color-code-div" style="background-color: #adc086"></div>
+                        <label>
 
-                            </label>
+                            Hosteller
 
-                            <label>
+                            <input class="color-code-div" style="background-color: #a2cbd6">
 
-                                Hosteller
+                        </label>
 
-                                <div class="color-code-div" style="background-color: #a2cbd6"></div>
+                        <label>
 
-                            </label>
+                            LabourShed 1
 
-                            <label>
+                            <input class="color-code-div" style="background-color: #f3f33d">
 
-                                LabourShed 1
+                        </label>
 
-                                <div class="color-code-div" style="background-color: #f3f33d"></div>
+                        <label>
 
-                            </label>
+                            LabourShed 2
 
-                            <label>
+                            <input class="color-code-div" style="background-color: #c3add8">
 
-                                LabourShed 2
-
-                                <div class="color-code-div" style="background-color: #c3add8"></div>
-
-                            </label>
-
-                        </div>
+                        </label>
 
                     </section>
 
+                </section>
 
-                </div>
+            </section>
+        </section>
 
-            </div>
+        <section class="idCardPage2">
 
+            <!--A4 CARDS CONTAINER-->
 
-        </div>
+            <div id="cardsContainer" class="cards-container">
 
+                <!-- ID CARD TEMPLATE -->
 
-
-        <!-- =========================================
-         BUTTONS
-    ========================================== -->
-
-        <footer>
-
-            <div class="btn-container" id="btn-container">
+                <div class="id-card card-template">
 
 
-                <button id="generateBtn" class="generate-btn">
+                    <!-- HEADER -->
 
-                    Generate ID Cards
-
-                </button>
+                    <div class="card-header">
 
 
-                <button id="pdfBtn" class="pdf-btn">
+                        <div class="logo-area">
 
-                    Generate PDF
-
-                </button>
-
-
-                <button id="excelCardBtn" class="excel-card-btn">
-
-                    Download ID Card Excel
-
-                </button>
-
-                <button id="wordBtn" class="word-btn">
-
-                    Download ID Card Word
-
-                </button>
-
-                <button id="printBtn" class="print-btn">
-
-                    Print
-
-                </button>
-
-
-                <button id="clearBtn" class="clear-btn">
-
-                    Clear
-
-                </button>
-
-
-            </div>
-
-        </footer>
-
-
-
-        <!-- =========================================
-         A4 CARDS CONTAINER
-    ========================================== -->
-
-        <div id="cardsContainer" class="cards-container">
-
-
-            <!--
-            JavaScript automatically creates
-            A4 pages here.
-
-            1 A4 page = 8 cards
-            2 columns x 4 rows
-        -->
-
-
-            <!-- =====================================
-             ID CARD TEMPLATE
-        ====================================== -->
-
-            <div class="id-card card-template">
-
-
-                <!-- HEADER -->
-
-                <div class="card-header">
-
-
-                    <div class="logo-area">
-
-                        <img src="logo.jpg" class="company-logo" alt="Company Logo">
-
-                    </div>
-
-
-                    <div class="company-area">
-
-
-                        <div class="company-name">
-
-                            APEX COCO AND SOLAR ENERGY LIMITED
+                            <img src="logo.jpg" class="company-logo" alt="Company Logo">
 
                         </div>
 
 
-                        <div class="company-address">
+                        <div class="company-area">
 
-                            <div class="address1">
 
-                                Factory: 70-1, Devanallur, Chellampalayam Post
+                            <div class="company-name">
+
+                                APEX COCO AND SOLAR ENERGY LIMITED
 
                             </div>
 
 
-                            <div class="address2">
+                            <div class="company-address">
 
-                                Dharapuram TK, Tirupur District - 638 672
+                                <div class="address1">
+
+                                    Factory: 70-1, Devanallur, Chellampalayam Post
+
+                                </div>
+
+
+                                <div class="address2">
+
+                                    Dharapuram TK, Tirupur District - 638 672
+
+                                </div>
+
+
+                                <div class="address3">
+
+                                    Tamil Nadu, India.
+
+                                </div>
 
                             </div>
 
 
-                            <div class="address3">
+                        </div>
 
-                                Tamil Nadu, India.
+                    </div>
+
+
+
+                    <!-- BODY -->
+
+                    <div class="card-body">
+
+
+                        <!-- PHOTO -->
+
+                        <div class="photo-box">
+
+                            <img class="employee-photo" alt="Employee Photo">
+
+                            <span class="photo-placeholder">
+
+                                PHOTO
+
+                            </span>
+
+                        </div>
+
+
+
+                        <!-- DETAILS -->
+
+                        <div class="details">
+
+
+                            <div class="detail">
+
+                                <span>EMP ID</span>
+
+                                <b>:</b>
+
+                                <strong class="emp-id"></strong>
+
+                            </div>
+
+
+                            <div class="detail">
+
+                                <span>EMP NAME</span>
+
+                                <b>:</b>
+
+                                <strong class="emp-name"></strong>
+
+                            </div>
+
+
+                            <div class="detail">
+
+                                <span>DEPT</span>
+
+                                <b>:</b>
+
+                                <strong class="dept"></strong>
+
+                            </div>
+
+
+                            <div class="detail">
+
+                                <span>SUB-DEPT</span>
+
+                                <b>:</b>
+
+                                <strong class="sub-dept"></strong>
+
+                            </div>
+
+
+                            <div class="detail">
+
+                                <span>DOJ</span>
+
+                                <b>:</b>
+
+                                <strong class="doj"></strong>
+
+                            </div>
+
+
+                            <div class="detail">
+
+                                <span>GENDER</span>
+
+                                <b>:</b>
+
+                                <strong class="gender"></strong>
+
+                            </div>
+
+
+                            <div class="detail">
+
+                                <span>DOB</span>
+
+                                <b>:</b>
+
+                                <strong class="dob"></strong>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- SIGNATURE -->
+
+                        <div class="signature-area">
+
+                            <img src="signature.png" class="signature" alt="Signature">
+
+
+                            <div class="authority">
+
+                                ISSUING AUTHORITY
 
                             </div>
 
                         </div>
 
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- BODY -->
-
-                <div class="card-body">
-
-
-                    <!-- PHOTO -->
-
-                    <div class="photo-box">
-
-                        <img class="employee-photo" alt="Employee Photo">
-
-                        <span class="photo-placeholder">
-
-                            PHOTO
-
-                        </span>
-
-                    </div>
-
-
-
-                    <!-- DETAILS -->
-
-                    <div class="details">
-
-
-                        <div class="detail">
-
-                            <span>EMP ID</span>
-
-                            <b>:</b>
-
-                            <strong class="emp-id"></strong>
-
-                        </div>
-
-
-                        <div class="detail">
-
-                            <span>EMP NAME</span>
-
-                            <b>:</b>
-
-                            <strong class="emp-name"></strong>
-
-                        </div>
-
-
-                        <div class="detail">
-
-                            <span>DEPT</span>
-
-                            <b>:</b>
-
-                            <strong class="dept"></strong>
-
-                        </div>
-
-
-                        <div class="detail">
-
-                            <span>SUB-DEPT</span>
-
-                            <b>:</b>
-
-                            <strong class="sub-dept"></strong>
-
-                        </div>
-
-
-                        <div class="detail">
-
-                            <span>DOJ</span>
-
-                            <b>:</b>
-
-                            <strong class="doj"></strong>
-
-                        </div>
-
-
-                        <div class="detail">
-
-                            <span>GENDER</span>
-
-                            <b>:</b>
-
-                            <strong class="gender"></strong>
-
-                        </div>
-
-
-                        <div class="detail">
-
-                            <span>DOB</span>
-
-                            <b>:</b>
-
-                            <strong class="dob"></strong>
-
-                        </div>
-
-
-                    </div>
-
-
-
-                    <!-- SIGNATURE -->
-
-                    <div class="signature-area">
-
-                        <img src="signature.png" class="signature" alt="Signature">
-
-
-                        <div class="authority">
-
-                            ISSUING AUTHORITY
-
-                        </div>
 
                     </div>
 
@@ -507,11 +455,41 @@
 
             </div>
 
-
-        </div>
-
+        </section>
 
     </main>
+
+    <!---- IdCard Button Section-->
+    <footer class="btn-section">
+
+        <div class="btn-container" id="btn-container">
+
+            <button id="generateBtn" class="generate-btn">
+
+                Generate ID Cards
+
+            </button>
+
+            <button id="pdfBtn" class="pdf-btn">
+
+                Generate PDF
+
+            </button>
+
+            <button id="clearBtn" class="clear-btn">
+
+                Clear
+
+            </button>
+
+        </div>
+
+    </footer>
+
+
+
+
+
 
 
 
