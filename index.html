@@ -34,33 +34,18 @@
     <nav class="navbar">
 
         <header>
-            <h1>HomePage</h1>
+            <div class="nav-header">
+                <b class="header">HomePage</b>
+            </div>
         </header>
 
-        <ul class="nav">
+        <div class="nav-container">
+            <a href="#" class="home">Home</a>
+            <a href="#" class="about">About</a>
+            <a href="#" class="logoff">LogOff</a>
+        </div>
 
-            <li><a href="#" class="home">Home</a></li>
-
-            <li class="dropdown">
-
-                <a href="#" class="menu">Menu</a>
-
-                <div class="dropdown-content">
-
-                    <a href="#" class="menuIdPage">IdCard</a>
-                    <a href="#" class="menuImgReducerPage">KbReducer</a>
-
-                </div>
-
-            </li>
-
-            <li><a href="#" class="about">About</a></li>
-
-            <li><a href="#" class="logoff">LogOff</a></li>
-
-        </ul>
-
-
+        <img src="asset/settings.png" height="30px">
 
     </nav>
 
@@ -68,13 +53,38 @@
 
     <main>
 
+        <section class="loding">
+
+            <div class="round1"></div>
+            <div class="round2"></div>
+
+        </section>
+
+        <section class="homePage">
+
+            <section class="idCardNavigate">
+
+                <b>IdCard</b>
+                <img src="asset/right-arrow.png" class="idCardPageBtn">
+
+            </section>
+
+            <section class="kbReducerNavigate">
+
+                <b>kbReducer</b>
+                <img src="asset/right-arrow.png" class="kbReducerPageBtn">
+
+            </section>
+
+        </section>
+
         <!-- Login Section -->
         <section class="login-section">
 
             <section class="login-container">
 
                 <section class="vide-section">
-                   <video src="asset/CarttonVid.mp4" autoplay muted loop type="CarttonVid/mp4"></video>
+                    <video src="asset/CarttonVid.mp4" autoplay muted loop type="CarttonVid/mp4"></video>
 
                 </section>
 
@@ -160,104 +170,108 @@
                 </section>
 
             </section>
-            <!---- IdCard Menu Section-->
-            <section class="idCardMenu">
+            <section class="adress-color-opIcon">
+                <img src="asset/menuBlack.png" class="openMenuIcon" height="25px">
+            </section>
 
-                <img src="asset/menuBlack.png" class="openMenuIcon">
+        </section>
 
-                <section class="menu-inside">
+        <!---- IdCard Menu Section-->
+        <section class="idCardMenu">
 
-                    <section class="address-details">
+            <section class="menu-inside">
 
-                        <img src="asset/menuClose.png   " class="closeMenuIcon">
-
-                        <h2>
-                            * Company Address
-                        </h2>
+                <section class="address-details">
 
 
-                        <label>
-
-                            Company Name
-
-                            <input id="companyName" value="APEX COCO AND SOLAR ENERGY LIMITED">
-
-                        </label>
+                    <h2>
+                        * Company Address
+                    </h2>
 
 
-                        <label>
+                    <label>
 
-                            Address Line 1
+                        Company Name
 
-                            <input id="address1" value="Factory: 70-1, Devanallur, Chellampalayam Post,">
+                        <input id="companyName" value="APEX COCO AND SOLAR ENERGY LIMITED">
 
-                        </label>
-
-
-                        <label>
-
-                            Address Line 2
-
-                            <input id="address2" value="Dharapuram TK, Tirupur District - 638 672">
-
-                        </label>
+                    </label>
 
 
-                        <label>
+                    <label>
 
-                            Address Line 3
+                        Address Line 1
 
-                            <input id="address3" value="Tamil Nadu, India.">
+                        <input id="address1" value="Factory: 70-1, Devanallur, Chellampalayam Post,">
 
-                        </label>
+                    </label>
 
-                    </section>
 
-                    <!-- Design -->
+                    <label>
 
-                    <section class="colour-details">
+                        Address Line 2
 
-                        <h2>
-                            * IdCard Colors
-                        </h2>
+                        <input id="address2" value="Dharapuram TK, Tirupur District - 638 672">
 
-                        <label>
+                    </label>
 
-                            DayScholar
 
-                            <input class="color-code-div" style="background-color: #adc086">
+                    <label>
 
-                        </label>
+                        Address Line 3
 
-                        <label>
+                        <input id="address3" value="Tamil Nadu, India.">
 
-                            Hosteller
-
-                            <input class="color-code-div" style="background-color: #a2cbd6">
-
-                        </label>
-
-                        <label>
-
-                            LabourShed 1
-
-                            <input class="color-code-div" style="background-color: #f3f33d">
-
-                        </label>
-
-                        <label>
-
-                            LabourShed 2
-
-                            <input class="color-code-div" style="background-color: #c3add8">
-
-                        </label>
-
-                    </section>
+                    </label>
 
                 </section>
 
+                <!-- Design -->
+
+                <section class="colour-details">
+
+                    <h2>
+                        * IdCard Colors
+                    </h2>
+
+                    <label>
+
+                        DayScholar
+
+                        <input class="color-code-div" style="background-color: #adc086">
+
+                    </label>
+
+                    <label>
+
+                        Hosteller
+
+                        <input class="color-code-div" style="background-color: #a2cbd6">
+
+                    </label>
+
+                    <label>
+
+                        LabourShed 1
+
+                        <input class="color-code-div" style="background-color: #f3f33d">
+
+                    </label>
+
+                    <label>
+
+                        LabourShed 2
+
+                        <input class="color-code-div" style="background-color: #c3add8">
+
+                    </label>
+
+                </section>
+
+                <img src="asset/close.png   " class="closeMenuIcon" height="20px">
+
             </section>
+
         </section>
 
         <section class="idCardPage2">
@@ -488,7 +502,7 @@
 
 
 
-    
+
 
 
 

@@ -1,7 +1,7 @@
 const body = document.querySelector("body");
+const header = document.querySelector(".header");
 
-
-
+//const round1 = document.querySelector(".loding");
 //login Select
 
 const loginSection = document.querySelector(".login-section");
@@ -31,12 +31,16 @@ const loginBtn = document.querySelector(".loginBtn").addEventListener("click", (
 
                 setTimeout(() => {
                     loginSection.style.display = "none";
-                    body.style = "background-image: url(asset/Background.png)";
-                    navBar.style.display = "grid"
+                    body.style = "background-image: url()";
+                    navBar.style.display = "grid";  
+                    homePage.style.display = "flex";
+                    //round1.style.display = "none";
+
                 }, 1000)
+                //round1.style.display = "flex";
             }
 
-            else{
+            else {
 
                 loginHeading.innerHTML = "Invaid Password";
                 userName.value = "";
@@ -44,9 +48,9 @@ const loginBtn = document.querySelector(".loginBtn").addEventListener("click", (
 
         }
 
-        else{
+        else {
 
-            loginHeading.innerHTML = "Invalid UserName";                        
+            loginHeading.innerHTML = "Invalid UserName";
         }
 
     }
@@ -65,32 +69,52 @@ const loginBtn = document.querySelector(".loginBtn").addEventListener("click", (
 const navBar = document.querySelector("nav");
 
 //Home Section
+
 const home = document.querySelector(".home").addEventListener("click", () => {
+
+    homePage.style.display = "flex";
+    header.innerHTML = "Home Page";
 
     idCardPage.style = "display: none";
     btnContainer.style = "display: none";
 
 })
 
-//menu selection
-const menuIdcardPage = document.querySelector(".menuIdPage").addEventListener("click", () => {
+const homePage = document.querySelector(".homePage");
+
+const idCardPageBtn = document.querySelector(".idCardPageBtn").addEventListener("click", () => {
+
+    header.innerHTML = "IdCard Page";
+    homePage.style.display = "none";
 
     idCardPage.style = "display: grid";
     btnContainer.style = "display: flex";
-    home.style = "background: red";
-
 })
 
-const menuKbReducerPage = document.querySelector(".menuImgReducerPage").addEventListener("click", () => {
+const KbReducerPagebtn = document.querySelector(".kbReducerPageBtn").addEventListener("click", () => {
 
-    idCardPage.style = "display: none";
-    btnContainer.style = "display: none";
+    alert("")
+})
+
+//adress color section
+const openMenuIcon = document.querySelector(".adress-color-opIcon");
+
+const idCardMenu = document.querySelector(".idCardMenu");
+
+openMenuIcon.addEventListener("click", () => {
+
+    btnContainer.style.display = "none";
+    idCardPage.style.display = "none";
+    idCardMenu.style.display = "flex";
 })
 
 // About Section
 const about = document.querySelector(".about")
 about.addEventListener("click", () => {
 
+    header.innerHTML = "About Page";
+    homePage.style.display = "none";
+    idCardMenu.style.display = "none";
     idCardPage.style = "display: none";
     btnContainer.style = "display: none";
 })
@@ -112,32 +136,21 @@ const logOff = document.querySelector(".logoff").addEventListener("click", () =>
 
 })
 
-//idCard Section
-const idCardSection = document.querySelector(".idCard-section");
+
 // idCard page
 const idCardPage = document.querySelector(".idCardPage");
 
 //Id Card other details  Section
 
-const menuInside = document.querySelector(".menu-inside");
-
-const openMenu = document.querySelector(".openMenuIcon");
-
-openMenu.addEventListener("click", () => {
-
-    menuInside.style = "transition: all 1s ease; opacity: 100%";
-
-    openMenu.style = "display: none";
-
-})
-
 const colseMenu = document.querySelector(".closeMenuIcon")
 
 colseMenu.addEventListener("click", () => {
 
-    menuInside.style = "transition: all 1s ease; opacity: 0%;";
+    idCardMenu.style = "transition: all 1s ease; display: none";
 
-    openMenu.style = "display: block";
+    idCardPage.style = "display: grid";
+
+    btnContainer.style.display = "flex";
 
 })
 
@@ -411,7 +424,7 @@ generateBtn.addEventListener("click", function () {
     idCardPage2.style.display = "flex";
 
     navBar.style.display = "none";
-    btnContainer.style = "display: flex;bottom: 0px";
+    btnContainer.style = "display: flex";
 
     // Show cards
     cardsContainer.classList.add("active");
