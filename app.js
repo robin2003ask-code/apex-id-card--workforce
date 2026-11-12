@@ -129,6 +129,8 @@ const logOff = document.querySelector(".logoff").addEventListener("click", () =>
     password.value = "";
     loginHeading.innerHTML = "Hello!"
 
+    homePage.style.display = "none";
+
     navBar.style = "display: none";
 
     idCardPage.style = "display: none";
