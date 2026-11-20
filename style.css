@@ -2,17 +2,6 @@
     box-sizing: border-box;
 }
 
-body {
-    background-image: url("asset/LoginBackground.png");
-
-    background-size: cover;
-
-    background-position: center;
-
-    background-repeat: no-repeat;
-
-    background-attachment: fixed;
-}
 
 /* Nav Bar */
 
@@ -120,7 +109,7 @@ body {
 }
 
 /*loading */
-.loding{
+.loding {
 
 
     height: 250px;
@@ -138,15 +127,15 @@ body {
     align-items: center;
 
     display: none;
-    
+
     justify-content: center;
 
-    z-index: 5  ;
+    z-index: 5;
 
     margin-top: 50%;
 }
 
-.round1{
+.round1 {
 
     height: 80px;
 
@@ -277,7 +266,7 @@ body {
 
     width: 100%;
 
-    background: rgb(11, 111, 210);
+    background: black;
 
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
@@ -397,9 +386,9 @@ body {
 
     width: 480px;
 
-    background: black;
+    color: black;
 
-    color: white;
+    border: 1px solid black;
 
     border-radius: 10px;
 
@@ -408,18 +397,11 @@ body {
     justify-content: space-around;
 
     padding: 5px;
-
-    box-shadow: rgba(10, 10, 10, 0.973) 0px 3px 8px;
-}
-
-.panel:hover {
-
-    box-shadow: rgba(1, 1, 186, 0.973) 7px 7px 8px;
 }
 
 .panel .download-excel-btn {
 
-    height: 40px;
+    height: 45px;
 
     width: 70%;
 
@@ -430,6 +412,10 @@ body {
     outline: none;
 
     border: none;
+
+    background: #111;
+
+    color: white;
 }
 
 .panel .download-excel-btn:hover {
@@ -448,6 +434,8 @@ body {
     color: black;
 
     border-radius: 10px;
+
+    border: 1px solid black;
 }
 
 .panel .status {
@@ -607,13 +595,16 @@ body {
 
 .generate-btn {
 
-    background: linear-gradient(to right, dodgerblue, blue);
+    background: black;
 
+    color: white;
 }
 
 .clear-btn {
 
-    background: linear-gradient(to right, rgb(115, 3, 3), rgb(255, 4, 4));
+    background: black;
+
+    color: white;
 
 }
 
@@ -621,7 +612,9 @@ body {
 
     display: none;
 
-    background: linear-gradient(to right, rgb(4, 91, 4), lime);
+    background: black;
+
+    color: white;
 
 }
 

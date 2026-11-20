@@ -1,4 +1,3 @@
-const body = document.querySelector("body");
 const header = document.querySelector(".header");
 
 //const round1 = document.querySelector(".loding");
@@ -31,7 +30,6 @@ const loginBtn = document.querySelector(".loginBtn").addEventListener("click", (
 
                 setTimeout(() => {
                     loginSection.style.display = "none";
-                    body.style = "background-image: url()";
                     navBar.style.display = "grid";  
                     homePage.style.display = "flex";
                     //round1.style.display = "none";
@@ -123,7 +121,6 @@ about.addEventListener("click", () => {
 const logOff = document.querySelector(".logoff").addEventListener("click", () => {
 
     loginSection.style = "display: flex";
-    body.style = "background-image: url(asset/LoginBackground.png)";
 
     userName.value = "";
     password.value = "";
